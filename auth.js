@@ -12,5 +12,7 @@ function isPasswordCorrect(){
     }
 }
 
-
+function redirectToPassatQuiz(){
+    location.replace("q1passat.html");
+}
 
