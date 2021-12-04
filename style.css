@@ -1,15 +1,10 @@
-center{
-    align-items: center;
-   
-};
-
-.bigbutton {
-    display: block;
-    width: 100%;
-    border: none;
+.btns {
+    display: flex;
+    width: 25%;
+    border: double;
     background-color: #04AA6D;
     padding: 14px 28px;
-    font-size: 16px;
+    font-size: 20px;
     cursor: pointer;
     text-align: center;
 };
