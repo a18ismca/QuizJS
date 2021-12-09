@@ -4,15 +4,33 @@
 <head>
     <link rel="stylesheet" href="style.css">
 
-<h2>Login/h2>
+<h2 id="header">Login<h2>
 </head>
 
 <script src="auth.js">
 
 </script>
 <body>
+     <!---
+    <form id="form1" method="post" onsubmit="return loginAttempt();">
+        <p id="login_label">USER LOGIN</p>
+        <input type="text" id="username" placeholder="Enter Username">
+        <br>
+        <input type="password" id="pwd" placeholder="Enter Password">
+        <br>
+        <input type="submit" value="Login">
+        <br>
+        <p id="statement"></p>
+       </form>
+
+        -->
+    <div id="not">
+    <p id="unlabel">Username</p> <input id="username" type="text" placeholder="Enter username here!"><br>
+    <p id="pwdlabel">Password</p> <input id="pwd" type="text" placeholder="Enter password here!"><br>
+    <button id="loginBtn" onclick="loginAttempt()">Login</button>
     
-    
-    
+    </div>
+    <p id="statement"></p>
+  
 </body>
 </html>
