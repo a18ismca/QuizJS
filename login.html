@@ -24,16 +24,24 @@
        </form>
 
         -->
-    <div id="not">
-        <label id="unlabel">Username</p> <input id="username" type="text" placeholder="Enter username here!"><br>
-        <label id="pwdlabel">Password</p> <input id="pwd" type="text" placeholder="Enter password here!"><br>
-        <button id="loginBtn" onclick="loginAttemptWithAccounts()">Login</button>
+    <div id="logintable">
+
+        <label for="username">Username</label><br>
+            <input id="username" type="text" placeholder="Enter username here!" required><br>
+
+        <label for="pwd">Password</label><br>
+            <input id="pwd" type="password" placeholder="Enter password here!" required><br>
+            
+        <button id="loginBtn" onclick="loginAttemptHardcode()">Login</button>
+
     </div>
 
-    <div id="info">
+    <br>
 
+    <div id="logininfo" class="infotable">
+        <p id="infotext" style="font-size: 15px; font-family: Arial, Helvetica, sans-serif;">Welcome to the login!</p>
     </div>
-    <p id="statement"></p>
+   <p id="statement"></p>
   
 </body>
 </html>

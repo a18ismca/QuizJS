@@ -25,6 +25,7 @@ var accounts = [
 ];
 
 
+
 // Method when logging in with multiple accounts, but only with one attempt.
 function loginAttemptWithAccounts(){
 
@@ -34,7 +35,11 @@ function loginAttemptWithAccounts(){
     for(i = 0; i < accounts.length; i++){
     if(getUsername === accounts[i].username && getPassword === accounts[i].password){
       return enterMenu();
-    } else {
+    } else if (getUsername === null & getPassword === null){
+        document.getElementById("infotext").innerHTML = "Enter username and password before attempting to log in!"
+    }
+    
+    else {
 
         if(loginAttempts == 1){
          return noAttemptsLeft();
@@ -42,30 +47,43 @@ function loginAttemptWithAccounts(){
         else{
             loginAttempts=loginAttempts-1;
         }
-        document.getElementById("statement").innerHTML = "Wrong username or password! Login attempts: " + loginAttempts;
+        document.getElementById("statement").innerHTML = "Wrong username or password. Login attempts left: " + loginAttempts;
         document.getElementById("statement").style.color = "red";
 
     }
 }
 }
 
-// Used when we want more than one attempt. This time three attempts.
+// Used when we want more than one attempt. This time three attempts. For one use only.
 function loginAttemptHardcode(){
     var getUsername = document.getElementById("username").value;
     var getPassword = document.getElementById("pwd").value;
     if(getUsername === "a18ismca" && getPassword === "Syp9393"){
       return enterMenu();
-    } else {
+    } 
+    // If password AND username are empty, make a statement.
+    else if (getUsername === "" && getPassword === ""){
+        document.getElementById("infotext").innerHTML = "Enter username and password before attempting to log in!"
+    } 
+    // If password is empty, make a statement.
+    else if (getUsername.length > 0 && getPassword === ""){
+        document.getElementById("infotext").innerHTML = "Enter password before attempting to log in!"
+    } 
+    // If username is empty, make a statement.
+    else if (getUsername === "" && getPassword.length !== ""){
+        document.getElementById("infotext").innerHTML = "Enter username before attempting to log in!"
+    }  else{
 
         if(loginAttempts == 1){
          return noAttemptsLeft();
         }
+
         loginAttempts=loginAttempts-1;
         document.getElementById("statement").innerHTML = "Wrong username or password! Login attempts: " + loginAttempts;
-        document.getElementById("statement").style.color = "red";
-    
+        document.getElementById("statement").style.color = "#8b0000";
+    }
 }
-}
+
 
 function enterMenu(){
     document.getElementById("statement").innerHTML = "Redirecting you to the quiz menu..."
@@ -91,7 +109,29 @@ function noAttemptsLeft(){
 
 
 
+
 function removeObjectsOnScreen(){
-    document.getElementById("not").remove();
+    document.getElementById("logintable").remove();
+    document.getElementById("logininfo").remove();
     document.getElementById("header").remove();
 }
+
+
+// Make it possible to press ENTER button when attempting to log in
+var usernameInput = document.getElementById("username");
+
+usernameInput.addEventListener("keydown", function(event) {
+
+    if (event.key === 13) {
+      document.getElementById("loginBtn").click;
+    }
+  });
+
+var pwdInput = document.getElementById("pwd");
+
+pwdInput.addEventListener("keydown", function(event) {
+
+    if (event.key === 13) {
+      document.getElementById("loginBtn").click();
+    }
+  });

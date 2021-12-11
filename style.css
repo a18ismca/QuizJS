@@ -5,7 +5,14 @@ body{
 
 #statement{
     text-align: center;
-    height: 50%;
+    height: 50px;
+    position: inherit;
+    font-size: 22px;
+
+}
+
+.labelclass{
+    padding-top: 10px;
 }
 
 #unlabel{
@@ -34,9 +41,22 @@ body{
     text-align: center;
 }
 
-#not{
+#logintable{
     width: 300px;
-    height: 200px;
-    border-style: groove;
+    height: 150px;
+    border: 5px solid black;
+    border-style: double;
     background-color: white;
+}
+
+.infotable{
+    border: 4px dotted black;
+    width: 300px;
+    height: 75px;
+    padding: 2px;
+   
+}
+
+label{
+    font-size: 18px;
 }
