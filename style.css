@@ -8,6 +8,10 @@ body{
     height: 50%;
 }
 
+#unlabel{
+    size: 1px;
+}
+
 .btns {
     display: flex;
     width: 25%;
@@ -28,4 +32,11 @@ body{
     font-size: 20px;
     cursor: pointer;
     text-align: center;
+}
+
+#not{
+    width: 300px;
+    height: 200px;
+    border-style: groove;
+    background-color: white;
 }

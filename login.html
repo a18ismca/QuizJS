@@ -12,7 +12,7 @@
 </script>
 <body>
      <!---
-    <form id="form1" method="post" onsubmit="return loginAttempt();">
+    <form id="form1" method="post" onsubmit="return loginAttemptHardcode();">
         <p id="login_label">USER LOGIN</p>
         <input type="text" id="username" placeholder="Enter Username">
         <br>
@@ -25,10 +25,13 @@
 
         -->
     <div id="not">
-    <p id="unlabel">Username</p> <input id="username" type="text" placeholder="Enter username here!"><br>
-    <p id="pwdlabel">Password</p> <input id="pwd" type="text" placeholder="Enter password here!"><br>
-    <button id="loginBtn" onclick="loginAttempt()">Login</button>
-    
+        <label id="unlabel">Username</p> <input id="username" type="text" placeholder="Enter username here!"><br>
+        <label id="pwdlabel">Password</p> <input id="pwd" type="text" placeholder="Enter password here!"><br>
+        <button id="loginBtn" onclick="loginAttemptWithAccounts()">Login</button>
+    </div>
+
+    <div id="info">
+
     </div>
     <p id="statement"></p>
   
